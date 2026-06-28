@@ -1,0 +1,69 @@
+{{!< default}}
+
+<article class="article-post">
+    <div class="article-header">
+        <div class="container">
+            <div class="article-meta">
+                {{#if primary_tag}}
+                    <a href="{{primary_tag.url}}" class="tag-badge">{{primary_tag.name}}</a>
+                {{/if}}
+                <span class="article-date">{{date published_at format="MMM DD, YYYY"}}</span>
+                <span class="read-time">{{reading_time}} min read</span>
+            </div>
+            <h1 class="article-title">{{title}}</h1>
+            <p class="article-excerpt">{{excerpt}}</p>
+            {{#if feature_image}}
+                <figure class="article-hero">
+                    <img src="{{feature_image}}" alt="{{title}}" />
+                </figure>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="article-content">
+        <div class="container">
+            <div class="post-body">
+                {{content}}
+            </div>
+
+            <footer class="article-footer">
+                <div class="author-info">
+                    {{#if primary_author}}
+                        <div class="author-avatar">
+                            {{#if primary_author.profile_image}}
+                                <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" />
+                            {{/if}}
+                        </div>
+                        <div class="author-details">
+                            <h3 class="author-name">{{primary_author.name}}</h3>
+                            {{#if primary_author.bio}}
+                                <p class="author-bio">{{primary_author.bio}}</p>
+                            {{/if}}
+                        </div>
+                    {{/if}}
+                </div>
+
+                <div class="article-tags">
+                    {{#foreach tags}}
+                        <a href="{{url}}" class="tag">#{{name}}</a>
+                    {{/foreach}}
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <section class="related-posts">
+        <div class="container">
+            <h2 class="section-title">Related Articles</h2>
+            <div class="articles-grid">
+                {{#get \"posts\" limit=\"3\" filter=\"tag:[{{primary_tag.slug}}]-{{id}}\"}}
+                    {{#foreach posts}}
+                        {{> article-card}}
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </section>
+</article>
+
+{{> newsletter-signup}}

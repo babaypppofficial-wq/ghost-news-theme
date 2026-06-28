@@ -1,0 +1,33 @@
+{{!< default}}
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="site-title">{{@site.title}}</h1>
+            <p class="site-description">{{@site.description}}</p>
+        </div>
+    </div>
+</section>
+
+<section class="featured-articles">
+    <div class="container">
+        <h2 class="section-title">Featured Stories</h2>
+        <div class="articles-grid">
+            {{#foreach posts limit="3"}}
+                {{> article-card}}
+            {{/foreach}}
+        </div>
+    </div>
+</section>
+
+<section class="latest-articles">
+    <div class="container">
+        <h2 class="section-title">Latest News</h2>
+        <div class="articles-list">
+            {{#foreach posts from="4"}}
+                {{> article-list-item}}
+            {{/foreach}}
+        </div>
+        {{pagination}}
+    </div>
+</section>

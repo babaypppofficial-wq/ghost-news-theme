@@ -1,0 +1,28 @@
+{
+  "name": "ghost-news-theme",
+  "description": "A professional, modern news theme for Ghost CMS optimized for content publishing and readability",
+  "version": "1.0.0",
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "news",
+    "blog",
+    "publishing",
+    "journalism"
+  ],
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xs": 300,
+      "s": 500,
+      "m": 800,
+      "l": 1200,
+      "xl": 2000
+    }
+  }
+}
