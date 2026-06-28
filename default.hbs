@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    <link rel="canonical" href="{{canonical_url}}" />
+    <meta property="og:site_name" content="{{@site.title}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{meta_title}}" />
+    <meta property="og:description" content="{{meta_description}}" />
+    {{#if feature_image}}
+        <meta property="og:image" content="{{feature_image}}" />
+    {{/if}}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{meta_title}}" />
+    <meta name="twitter:description" content="{{meta_description}}" />
+    {{#if feature_image}}
+        <meta name="twitter:image" content="{{feature_image}}" />
+    {{/if}}
+    <link rel="stylesheet" type="text/css" href="{{asset \"css/style.css\"}}" />
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    {{> header}}
+    <main class="main-content">
+        {{{body}}}
+    </main>
+    {{> footer}}
+    {{ghost_foot}}
+</body>
+</html>

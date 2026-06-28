@@ -1,0 +1,18 @@
+<section class="categories-widget widget">
+    <div class="widget-header">
+        <h3>Categories</h3>
+        <div class="widget-divider"></div>
+    </div>
+    <div class="widget-body">
+        <ul class="categories-list">
+            {{#foreach tags limit="8"}}
+                <li class="category-item">
+                    <a href="{{url}}" class="category-link">
+                        {{name}}
+                        <span class="category-count">({{count.posts}})</span>
+                    </a>
+                </li>
+            {{/foreach}}
+        </ul>
+    </div>
+</section>

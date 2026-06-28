@@ -1,0 +1,29 @@
+{
+  "name": "meridian-news-theme",
+  "description": "A premium professional news publishing theme for Ghost CMS with advanced content management, beautiful typography, and high-quality design",
+  "version": "2.0.0",
+  "author": "Professional News Publishing",
+  "license": "MIT",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "news",
+    "magazine",
+    "publishing",
+    "journalism",
+    "professional"
+  ],
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xs": 300,
+      "s": 500,
+      "m": 800,
+      "l": 1200,
+      "xl": 2000
+    }
+  }
+}
