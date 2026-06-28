@@ -1,0 +1,16 @@
+<section class="trending-widget widget">
+    <div class="widget-header">
+        <h3>Trending Now</h3>
+        <div class="widget-divider"></div>
+    </div>
+    <div class="widget-body">
+        <ul class="trending-list">
+            {{#foreach posts limit="5"}}
+                <li class="trending-item">
+                    <span class="trending-number">{{@index}}</span>
+                    <a href="{{url}}" class="trending-link">{{title}}</a>
+                </li>
+            {{/foreach}}
+        </ul>
+    </div>
+</section>

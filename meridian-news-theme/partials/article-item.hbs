@@ -1,0 +1,24 @@
+<article class="article-item">
+    <div class="article-item-layout">
+        {{#if feature_image}}
+            <div class="article-item-image">
+                <a href="{{url}}">
+                    <img src="{{feature_image}}" alt="{{title}}" />
+                </a>
+            </div>
+        {{/if}}
+        <div class="article-item-content">
+            <div class="article-item-meta">
+                {{#if primary_tag}}
+                    <a href="{{primary_tag.url}}" class="item-category">{{primary_tag.name}}</a>
+                {{/if}}
+                <span class="item-date">{{date published_at format="MMM DD, YYYY"}}</span>
+            </div>
+            <h3 class="article-item-title">
+                <a href="{{url}}">{{title}}</a>
+            </h3>
+            <p class="article-item-excerpt">{{excerpt words="50"}}...</p>
+            <a href="{{url}}" class="read-more">Read More →</a>
+        </div>
+    </div>
+</article>

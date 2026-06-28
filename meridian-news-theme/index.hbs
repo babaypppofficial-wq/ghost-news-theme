@@ -1,0 +1,71 @@
+{{!< default}}
+
+<!-- Hero Section -->
+<section class="hero-banner">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">{{@site.title}}</h1>
+            <p class="hero-subtitle">{{@site.description}}</p>
+        </div>
+        {{#if @site.cover_image}}
+            <div class="hero-image" style="background-image: url('{{@site.cover_image}}'); background-size: cover; background-position: center;"></div>
+        {{/if}}
+    </div>
+</section>
+
+<!-- Breaking News Bar -->
+<section class="breaking-news">
+    <div class="container">
+        <div class="breaking-news-content">
+            <span class="breaking-badge">🔴 BREAKING</span>
+            <div class="breaking-scroll">
+                {{#foreach posts limit="1"}}
+                    <a href="{{url}}" class="breaking-link">{{title}}</a>
+                {{/foreach}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Stories Section -->
+<section class="featured-stories">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured Stories</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="featured-grid">
+            {{#foreach posts limit="3"}}
+                {{> featured-article}}
+            {{/foreach}}
+        </div>
+    </div>
+</section>
+
+<!-- Latest News Section -->
+<section class="latest-news">
+    <div class="container">
+        <div class="news-layout">
+            <!-- Main Content -->
+            <div class="main-column">
+                <div class="section-header">
+                    <h2 class="section-title">Latest News</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="articles-list">
+                    {{#foreach posts from="3" limit="8"}}
+                        {{> article-item}}
+                    {{/foreach}}
+                </div>
+                {{pagination}}
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                {{> newsletter-widget}}
+                {{> trending-widget}}
+                {{> categories-widget}}
+            </aside>
+        </div>
+    </div>
+</section>
